@@ -1,0 +1,15 @@
+*.swp
+*.py[cod]
+*.DS_Store
+
+eggs/
+.eggs/
+*.egg-info/
+
+*/builds/score/_segments/*.ly
+*/segments/*/*.pdf
+*/builds/score/*.midi
+
+*.aux
+*.log
+*.out

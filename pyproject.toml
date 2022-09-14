@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "faat"
+version = "0.1.0"
+authors = [
+    { name="Tsz Kiu Pang", email="osamupang@gmail.com" },
+]
+description = "Faat, for solo piano"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "abjad",
+    "abjad-ext-nauert",
+    "pang",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.optional-dependencies]
+test = [
+    "black",
+    "flake8",
+    "isort",
+    "pytest",
+]
