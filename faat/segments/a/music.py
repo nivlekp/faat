@@ -1,5 +1,3 @@
-import pathlib
-
 import abjad
 import pang
 from faat import library
@@ -22,11 +20,7 @@ def main():
     )
     command = pang.QuantizeSequenceCommand(sequence)
     metadata = pang.build.section(score, scope, command)
-    lilypond_file_path = pathlib.Path(__file__).parent / "music.ly"
-    lilypond_file = pang.build.make_lilypond_file(score)
-    metadata_file_path = pathlib.Path(__file__).parent / "__metadata__.json"
-    pang.build.persist(lilypond_file, lilypond_file_path)
-    pang.build.write_metadata(metadata, metadata_file_path)
+    pang.build.persist(score, metadata)
 
 
 if __name__ == "__main__":
