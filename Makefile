@@ -96,5 +96,11 @@ test:
 sections:
 	@python ${PANG_PATH}/scripts/make_sections.py --sections $(sections)
 
+score:
+	@python ${PANG_PATH}/scripts/make_score.py
+
 test-sections:
 	@pytest ${PANG_PATH}/scripts/test_sections.py
+
+test-score:
+	@pytest ${PANG_PATH}/scripts/test_score.py
