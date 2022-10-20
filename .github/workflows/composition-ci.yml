@@ -70,3 +70,4 @@ jobs:
       run: |
         export PANG_PATH=/tmp/pang
         make test-sections
+        make test-score
