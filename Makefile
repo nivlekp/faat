@@ -1,6 +1,6 @@
 .PHONY: black-check black-reformat clean flake8 isort-check isort-reformat
-.PHONY: mypy pytest pytest-coverage pytest-x reformat check test
-.PHONY: sections test-sections
+.PHONY: mypy pytest reformat check test
+.PHONY: sections test-sections score test-score
 
 black-check:
 	black --check --diff .
@@ -66,17 +66,6 @@ project = faat
 
 pytest:
 	pytest .
-
-pytest-coverage:
-	rm -Rf htmlcov/
-	pytest \
-	--cov-config=.coveragerc \
-	--cov-report=html \
-	--cov=${project} \
-	.
-
-pytest-x:
-	pytest -x .
 
 reformat:
 	make black-reformat
