@@ -1,4 +1,4 @@
-\version "2.20.0"
+\version "2.24.2"
 \language "english"
 #(ly:set-option 'relative-includes #t)
 \include "../../stylesheets/stylesheet.ily"
