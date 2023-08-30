@@ -10,7 +10,7 @@ authors = [
 ]
 description = "Faat, for solo piano"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
     "abjad",
     "abjad-ext-nauert",
