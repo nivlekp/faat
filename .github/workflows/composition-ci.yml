@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [ "3.11" ]
+        python-version: [ "3.12" ]
 
     steps:
     - uses: actions/checkout@v2
@@ -23,7 +23,7 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install LilyPond
       run: |
-        lilypond_version=2.24.2
+        lilypond_version=2.24.3
         lilypond_archive=lilypond-${lilypond_version}-linux-x86_64.tar.gz
         lilypond_url=https://gitlab.com/lilypond/lilypond/-/releases/
         lilypond_url=${lilypond_url}/v${lilypond_version}/downloads/${lilypond_archive}
@@ -52,7 +52,7 @@ jobs:
         pip install /tmp/pang
     - name: Install dependencies
       run: |
-        export PATH=/tmp/lilypond-2.24.2/bin:/home/runner/bin:$PATH
+        export PATH=/tmp/lilypond-2.24.3/bin:/home/runner/bin:$PATH
         python -m pip install -e .[test]
         black --version
         flake8 --version
@@ -62,7 +62,7 @@ jobs:
         lilypond --version
     - name: Checks and Tests
       run: |
-        export PATH=/tmp/lilypond-2.24.2/bin:/home/runner/bin:$PATH
+        export PATH=/tmp/lilypond-2.24.3/bin:/home/runner/bin:$PATH
         export MYPYPATH=$MYPYPATH:/tmp/abjad
         export MYPYPATH=$MYPYPATH:/tmp/abjad-ext-nauert
         export MYPYPATH=$MYPYPATH:/tmp/pang
@@ -72,7 +72,6 @@ jobs:
         make pytest
     - name: Test Segments
       run: |
-        export PATH=/tmp/lilypond-2.24.2/bin:/home/runner/bin:$PATH
+        export PATH=/tmp/lilypond-2.24.3/bin:/home/runner/bin:$PATH
         export PANG_PATH=/tmp/pang
         make test-sections
-        make test-score
